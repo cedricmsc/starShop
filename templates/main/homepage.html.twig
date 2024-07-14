@@ -1,29 +1,33 @@
+{% extends 'base.html.twig' %}
 
+{% block title %}{{ parent()}}{{ myShip.name }}{% endblock %}
 
-<h1>StarShop: Your monopoly-busting option for Starship parts</h1>
-<p>Browse through {{starship}} starship</p>
+{% block body %}
+    <h1>StarShop: Your monopoly-busting option for Starship parts</h1>
+    <p>Browse through {{starship}} starship</p>
 
-{% if starship > 400 %}
-    {#This is the synthaxe to read a comment#}
-    <p><strong>The shipload is overload!</strong></p>
-    
-{% endif %}
+    {% if starship > 400 %}
+        {#This is the synthaxe to read a comment#}
+        <p><strong>The shipload is overload!</strong></p>
+        
+    {% endif %}
 
-<table>
-    <tr>
-        <th>Name</th>
-        <td>{{myShip.name}}</td>
-    </tr>
-    <tr>
-        <th>Class</th>
-        <td>{{myShip.class}}</td>
-    </tr>
-     <tr>
-        <th>Captain</th>
-        <td>{{myShip.captain|upper|lower|title}}</td>
-    </tr>
-    <tr>
-        <th>Status</th>
-        <td>{{myShip.status}}</td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{myShip.name}}</td>
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td>{{myShip.class}}</td>
+        </tr>
+        <tr>
+            <th>Captain</th>
+            <td>{{myShip.captain|upper|lower|title}}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{myShip.status}}</td>
+        </tr>
+    </table>
+{% endblock %}
